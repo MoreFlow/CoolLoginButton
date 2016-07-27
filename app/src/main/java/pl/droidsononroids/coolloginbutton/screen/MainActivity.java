@@ -31,12 +31,12 @@ public class MainActivity extends AppCompatActivity {
         mLoginManager.setLoginListener(new LoginManager.LoginListener() {
             @Override
             public void loginSuccess() {
-                loginButton.success();
+                loginButton.onSuccess();
             }
 
             @Override
             public void loginFailure() {
-                loginButton.failure();
+                loginButton.onFailure();
             }
         });
     }

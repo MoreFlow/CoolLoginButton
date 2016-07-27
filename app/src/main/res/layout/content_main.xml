@@ -29,10 +29,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:text="@string/app_name"
-        app:failure_color="#FF0"
-        app:success_color="#0FF"
-        app:failure_icon="@android:drawable/ic_dialog_alert"
-        app:success_icon="@android:drawable/stat_sys_upload_done"/>
+        />
+
+    <!--<pl.droidsononroids.coolloginbutton.view.LoginButton-->
+        <!--drugi component, zeby pokazac ze dzialaja atrybuty (kolory i ikony)-->
+        <!--android:id="@+id/login_button"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--app:text="@string/app_name"-->
+        <!--app:failure_color="#FF0"-->
+        <!--app:success_color="#0FF"-->
+        <!--app:failure_icon="@android:drawable/ic_dialog_alert"-->
+        <!--app:success_icon="@android:drawable/stat_sys_upload_done"-->
+        <!--/>-->
 
 </android.support.design.widget.CoordinatorLayout>

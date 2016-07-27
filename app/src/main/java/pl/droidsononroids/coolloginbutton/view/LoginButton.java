@@ -89,11 +89,11 @@ public class LoginButton extends FrameLayout {
         }
     }
 
-    public void success() {
+    public void onSuccess() {
         revealView(successView);
     }
 
-    public void failure() {
+    public void onFailure() {
         revealView(failureView);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
