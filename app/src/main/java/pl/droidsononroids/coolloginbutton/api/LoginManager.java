@@ -31,7 +31,6 @@ public class LoginManager {
 
     public interface LoginListener {
         void loginSuccess();
-
         void loginFailure();
     }
 

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LoginButton">
+        <attr name="text" format="string" />
+        <attr name="success_color" format="color" />
+        <attr name="failure_color" format="color" />
+        <attr name="success_icon" format="reference" />
+        <attr name="failure_icon" format="reference" />
+    </declare-styleable>
+</resources>
