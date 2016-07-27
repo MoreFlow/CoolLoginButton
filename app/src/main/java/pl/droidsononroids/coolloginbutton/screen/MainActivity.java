@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @OnClick(R.id.login_button)
+    @OnClick(R.id.normal_view)
     public void login() {
         loginButton.setProgressCircle();
         mLoginManager.performLogin(mEmailEditText.getText().toString());

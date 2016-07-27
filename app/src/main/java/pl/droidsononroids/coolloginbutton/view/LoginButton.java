@@ -34,19 +34,14 @@ public class LoginButton extends FrameLayout {
 
     public void revealView(View view) {
         progressBar.setVisibility(GONE);
-        cx = getWidth() / 2;
-        cy = getHeight() / 2;
-        float finalRadius = (float) Math.hypot(cx, cy);
+        float finalRadius = calculateRadius();
         Animator anim = ViewAnimationUtils.createCircularReveal(view, cx, cy, 0, finalRadius);
         view.setVisibility(View.VISIBLE);
         anim.start();
     }
 
     public void hideView(final View view) {
-        cx = view.getWidth() / 2;
-        cy = view.getHeight() / 2;
-        float initialRadius = (float) Math.hypot(cx, cy);
-
+        float initialRadius = calculateRadius();
         Animator anim = ViewAnimationUtils.createCircularReveal(view, cx, cy, initialRadius, 0);
         anim.addListener(new AnimatorListenerAdapter() {
             @Override
@@ -59,12 +54,10 @@ public class LoginButton extends FrameLayout {
     }
 
     public void success() {
-        container.setEnabled(false);
         revealView(successView);
     }
 
     public void failure() {
-        container.setEnabled(false);
         revealView(failureView);
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -73,10 +66,17 @@ public class LoginButton extends FrameLayout {
                 hideView(failureView);
             }
         }, 2000);
-        container.setEnabled(true);
+        normalView.setEnabled(true);
+    }
+
+    private float calculateRadius() {
+        cx = getWidth() / 2;
+        cy = getHeight() / 2;
+        return (float) Math.hypot(cx, cy);
     }
 
     public void setProgressCircle() {
+        normalView.setEnabled(false);
         progressBar.setVisibility(VISIBLE);
     }
 }
